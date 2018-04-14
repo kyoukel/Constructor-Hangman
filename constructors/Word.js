@@ -1,12 +1,12 @@
-const Letter =require("./Letter");
+const Letter = require("./Letter");
 
 module.exports = (string) => {
     // method
     const ltrArr = Array.from(string).map(ltr => Letter(ltr))
-    
-    const displayWord = () => ltrArr.map(ltr => ltr.getLetter()).join("")
 
-    const checkChoice = (choice) => ltrArr.map(ltr => ltr.getMatch())
+    const displayWord = () => ltrArr.map(ltr => ltr.getLetter()).join(" ")
+
+    const checkChoice = (choice) => ltrArr.map(ltr => ltr.getMatch(choice))
 
     return {
         displayWord: displayWord,
